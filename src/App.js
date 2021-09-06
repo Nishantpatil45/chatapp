@@ -38,6 +38,7 @@ function App() {
   );
 }
 
+
 function SignIn(){
   const signInWithGoogle = ()=>{
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -48,11 +49,13 @@ function SignIn(){
   )
 }
 
+
 function SignOut(){
   return auth.currentUser && (
     <bottem onClick={ () => auth.signOut()}>Sign Out</bottem>
   )
 }
+
 
 function ChatRoom(){
   const dummy = useRef();
@@ -86,6 +89,7 @@ function ChatRoom(){
   )
 }
 
+
 function ChatMessage(props){
   const { text, uid, photoUrl } = props.message;
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
@@ -97,5 +101,6 @@ function ChatMessage(props){
     </div>
   )
 }
+
 
 export default App;
